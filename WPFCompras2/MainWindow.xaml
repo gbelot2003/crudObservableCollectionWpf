@@ -5,8 +5,84 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFCompras2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
+        Title="MainWindow" Height="350" Width="579.661">
+    <Grid  Margin="20 20 20 20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="*" />
+            <!-- 1 -->
+            <ColumnDefinition Width="*" />
+            <!-- 2 -->
+            <ColumnDefinition Width="*" />
+            <!-- 3 -->
+            <ColumnDefinition Width="*" />
+            <!-- 4 -->
+            <ColumnDefinition Width="*" />
+            <!-- 5 -->
+            <ColumnDefinition Width="*" />
+            <!-- 6 -->
+            <ColumnDefinition Width="*" />
+            <!-- 7 -->
+            <ColumnDefinition Width="*" />
+            <!-- 8 -->
+            <ColumnDefinition Width="5" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5" />
+            <RowDefinition Height="Auto" />
+            <!-- 1 -->
+            <RowDefinition Height="Auto" MinHeight="30" />
+            <!-- 2 -->
+            <RowDefinition Height="Auto" />
+            <!-- 3 -->
+            <RowDefinition Height="Auto" MinHeight="30" />
+            <!-- 4 -->
+            <RowDefinition Height="Auto" />
+            <!-- 5 -->
+            <RowDefinition Height="Auto" MinHeight="30" />
+            <!-- 6 -->
+            <RowDefinition Height="Auto" />
+            <!-- 7 -->
+            <RowDefinition Height="*" MinHeight="30" />
+            <!-- 8 -->
+            <RowDefinition Height="Auto" />
+            <!-- 9 -->
+            <RowDefinition Height="*" />
+            <!-- 10 -->
+            <RowDefinition Height="*" />
+            <!-- 11 -->
+            <RowDefinition Height="Auto" />
+            <!-- 12 -->
+            <RowDefinition Height="Auto" />
+            <!-- 13 -->
+            <RowDefinition Height="5" />
+        </Grid.RowDefinitions>
+
+        <Label Content="Busqueda" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" />
+        <TextBox Name="searchTxt" Grid.Column="2" Grid.ColumnSpan="5" Grid.Row="1" Margin="0 , 0, 5, 0" TextChanged="SearchTxt_OnTextChanged" />
+
+        <Button Content="Nuevo Proveedor" Grid.Column="7" Grid.Row="1" Grid.ColumnSpan="2" Click="Btn_newPersonaClick" />
+
+        <!-- datagrid -->
+        <DataGrid Name="DataGridData" AutoGenerateColumns="False" IsReadOnly="true" ItemsSource="{Binding}"
+                  SelectionMode="Single"
+                  Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="8" Grid.RowSpan="10" Margin="0, 5, 0, 0">
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="FontWeight" Value="Bold" />
+                    <Setter Property="BorderThickness" Value="0,0,1,2" />
+                </Style>
+                <Style TargetType="DataGridRow">
+                    <EventSetter Event="MouseDoubleClick" Handler="Row_DoubleClick"/>
+                </Style>
+            </DataGrid.Resources>
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="id" Binding="{Binding id}" Visibility="Collapsed" />
+                <DataGridTextColumn Header="Nombre" Binding="{Binding FirstName}" Width="200" />
+                <DataGridTextColumn Header="Apellido" Binding="{Binding LastName}" Width="285" />
+            </DataGrid.Columns>
+
+        </DataGrid>
     </Grid>
 </Window>

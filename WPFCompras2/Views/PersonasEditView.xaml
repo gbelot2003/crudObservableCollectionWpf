@@ -1,0 +1,15 @@
+﻿<Window x:Class="WPFCompras2.Views.PersonasEditView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFCompras2.Views"
+        mc:Ignorable="d"
+        Title="PersonasEditView" Height="300" Width="300">
+    <Grid>
+        <TextBox x:Name="txtFirstName" HorizontalAlignment="Left" Height="23" Margin="86,35,0,0" TextWrapping="Wrap" Text="{Binding FirstName}" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtLastName" HorizontalAlignment="Left" Height="23" Margin="86,75,0,0" TextWrapping="Wrap" Text="{Binding LastName}" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Salvar" HorizontalAlignment="Left" Margin="107,114,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.318,-0.178" Click="BtnEditOnClick"/>
+
+    </Grid>
+</Window>
